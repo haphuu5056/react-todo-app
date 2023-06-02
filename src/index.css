@@ -1,0 +1,139 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+}
+.app{
+  max-width: 600px;
+  margin: auto;
+  padding: 0 2rem;
+}
+.app .title{
+  font-size: 4rem;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgb(236, 191, 191);
+}
+.container{
+  padding: .5rem;
+  background-color: #fff;
+  border-radius: 8px; 
+  box-shadow: 10px 10px 5px -2px rgba(0,0,0,0.26);
+  -webkit-box-shadow: 10px 10px 5px -2px rgba(0,0,0,0.26);
+  -moz-box-shadow: 10px 10px 5px -2px rgba(0,0,0,0.26);
+}
+.form-control input{
+  padding: 1rem 2rem;
+  width: 100%;
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.form-control input::placeholder{
+  font-size: 1.4rem;
+  color: #9999;
+  /* letter-spacing: 2px; */
+  font-style: italic;
+}
+.todos-container{
+  padding: 0 2rem;
+}
+.todo-item{
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: .5rem 0;
+  letter-spacing: .3px;
+}
+.todo-item .formLabel {
+  font-size: 1.1rem;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+.todo-item .formLabel .inputCheck {
+  -webkit-appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 15px;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+}
+ .inputCheck:checked{
+  background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+.inputCheck:checked:after {
+	content: '\2714';
+	font-size: 18px;
+	position: absolute;
+	top: 2px;
+	left: 6px;
+	color: green;
+}
+.delete-btn{
+  color: #610707;
+  cursor: pointer;
+}
+.delete-btn:hover{
+  color: #b60808;
+}
+.completed{
+  color: #ccc;
+  text-decoration: line-through;
+  transition: .5s ease;
+}
+.selections-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 0 ;
+}
+.buttons{
+  display: flex;
+}
+.buttons .btn{
+  padding: .2rem .3rem;
+  margin-right: .5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #777;
+  cursor: pointer;
+}
+.buttons .btn:hover, .btn:focus{
+  border: 2px solid #dfdddd;
+  border-radius: 5px;
+}
+.clear-btn{
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #777;
+  background-color: transparent;
+  cursor: pointer;
+}
+.items-left{
+  color: #777;
+  font-size: 14px;
+  font-weight: 500;
+}

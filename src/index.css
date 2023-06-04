@@ -246,16 +246,6 @@ body {
   .buttons .btn{
     padding: .1rem .2rem;
     margin-right: .3rem;
-    font-size: .7rem;
-  }
-  .buttons .btn:hover, .btn:focus{
-    border: 2px solid #dfdddd;
-    border-radius: 5px;
-  }
-  .clear-btn{
-    font-size: 11px;
-  }
-  .items-left{
     color: #777;
     font-size: 11px;
     font-weight: 500;

@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-export const Todos = ({ todos, CompletedTodos, deleteTodo }) => {
+export const Todos = ({ todos, CompletedTodos, deleteTodo,editTodos }) => {
   return (
     <ul className="todos-container">
       {todos.length <=0 && ''}
@@ -9,7 +9,8 @@ export const Todos = ({ todos, CompletedTodos, deleteTodo }) => {
         return (
           <TodoItem
            deleteTodo={deleteTodo}
-           {...todo} key={todo.id} CompletedTodos={CompletedTodos} />
+           {...todo} key={todo.id} CompletedTodos={CompletedTodos}
+           editTodos={editTodos}/>
         );
       })}
     </ul>

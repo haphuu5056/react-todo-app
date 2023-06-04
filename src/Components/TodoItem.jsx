@@ -1,18 +1,45 @@
-import React from 'react'
-import {TiDelete} from 'react-icons/ti'
-const TodoItem = ({id,title,completed, CompletedTodos, deleteTodo}) => {
+import {TiDelete} from 'react-icons/ti';
+import {FaEdit} from 'react-icons/fa'
+import { useState } from 'react';
+const TodoItem = ({id,title,completed, CompletedTodos, deleteTodo,editTodos,}) => {
+  const [edititing, setEditing] = useState(false);
+
+  const handleUpdatedDone = (event) => {
+    if (event.key === 'Enter') {
+      setEditing(false);
+    }
+  };
   return (
-    <li className='todo-item'>
-      <label htmlFor="" className={`formLabel ${completed ? 'completed': ''}`}>
-        <input 
+    <li className="todo-item">
+      <label htmlFor="" className={`formLabel ${completed ? "completed" : ""}`}>
+        <input
           type="checkBox"
-          className='inputCheck'
+          className="inputCheck"
           checked={completed}
           onChange={(e) => CompletedTodos(id, e.target.checked)}
         />
-        {title}
+        {edititing ? (
+          <div className="edit-box">
+            <input 
+            type="text" 
+            value={title}
+            autoFocus
+            onChange={(e)=> editTodos(e.target.value, id)}
+            onKeyDown={handleUpdatedDone}
+            className="textInput" />
+          </div>
+        ) : 
+          title
+        }
       </label>
-      <TiDelete size={30} className='delete-btn' onClick={()=>deleteTodo(id)}/>
+
+      <div className="actions">
+        <FaEdit className="edit-btn" onClick={(e) => setEditing(!edititing)} />
+        <TiDelete
+          className="delete-btn"
+          onClick={() => deleteTodo(id)}
+        />
+      </div>
     </li>
   );
 }

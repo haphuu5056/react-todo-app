@@ -39,7 +39,6 @@ body {
 .form-control input::placeholder{
   font-size: 1.4rem;
   color: #9999;
-  /* letter-spacing: 2px; */
   font-style: italic;
 }
 .todos-container{
@@ -58,6 +57,7 @@ body {
   letter-spacing: .3px;
 }
 .todo-item .formLabel {
+  flex: 1;
   font-size: 1.1rem;
   line-height: 1.1;
   display: grid;
@@ -70,7 +70,7 @@ body {
 	background-color: #fafafa;
 	border: 1px solid #cacece;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-	padding: 15px;
+	padding: 12px;
 	border-radius: 50%;
 	display: inline-block;
 	position: relative;
@@ -83,18 +83,37 @@ body {
 }
 .inputCheck:checked:after {
 	content: '\2714';
-	font-size: 18px;
+	font-size: 15px;
 	position: absolute;
 	top: 2px;
 	left: 6px;
-	color: green;
+	color: rgb(7, 187, 7);
+}
+.edit-btn:hover{
+  color: #133613;
+}
+.edit-box{
+  width: 100%;
+}
+.textInput {
+  width: 90%;
+  padding: 7px;
+  border: 1px solid #dfdfdf;
+  outline: none;
+  font-size: 19px;
 }
 .delete-btn{
+  font-size: 1.5rem;
   color: #610707;
   cursor: pointer;
 }
 .delete-btn:hover{
   color: #b60808;
+}
+.edit-btn{
+  font-size: 1.3rem;
+  color: green;
+  cursor: pointer;
 }
 .completed{
   color: #ccc;
@@ -136,4 +155,109 @@ body {
   color: #777;
   font-size: 14px;
   font-weight: 500;
+}
+.actions{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* responsivness */
+@media only screen and (max-width: 600px) {
+  .app{
+    max-width: 700px;
+    margin: auto;
+    padding: 0 1rem;
+  }
+  .app .title{
+    font-size: 2rem;
+  }
+  .form-control input{
+    padding: 1rem ;
+    width: 100%;
+    font-size: 1rem;
+  }
+  .form-control input::placeholder{
+    font-size: 1.1rem;
+  }
+  .todos-container{
+    padding: 0 1rem;
+  }
+  todo-item{
+    list-style: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: .5rem 0;
+    letter-spacing: .3px;
+  }
+  .todo-item .formLabel {
+    flex: 1;
+    font-size: .9rem;
+    gap: 1.3rem;
+  }
+  .todo-item .formLabel .inputCheck {
+    padding: 10px;
+  }
+   .inputCheck:checked{
+    background-color: #e9ecee;
+    border: 1px solid #adb8c0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    color: #99a1a7;
+  }
+  .inputCheck:checked:after {
+    content: '\2714';
+    font-size: 12px;
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    color: rgb(7, 187, 7);
+  }
+  .edit-btn:hover{
+    color: #133613;
+  }
+  .textInput {
+    width: 90%;
+    padding: 7px;
+    font-size: 15px;
+  }
+  .delete-btn{
+    font-size: 18px;
+  }
+  .edit-btn{
+    font-size: 16px;
+  }
+  .completed{
+    transition: none;
+  }
+  .selections-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: .5rem;
+  }
+  .buttons{
+    display: flex;
+  }
+  .buttons .btn{
+    padding: .1rem .2rem;
+    margin-right: .3rem;
+    font-size: .7rem;
+  }
+  .buttons .btn:hover, .btn:focus{
+    border: 2px solid #dfdddd;
+    border-radius: 5px;
+  }
+  .clear-btn{
+    font-size: 11px;
+  }
+  .items-left{
+    color: #777;
+    font-size: 11px;
+    font-weight: 500;
+  }
 }
